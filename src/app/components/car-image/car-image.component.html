@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+       <tr>
+        <th>Car Image Id</th>
+        <th>Car Id</th>
+        <th>Date Time</th>
+        <th>Image</th>
+       </tr>
+    </thead>
+    
+    <tr *ngFor="let carImage of carImages">
+        <td>{{carImage.carImageId}}</td>
+        <td>{{carImage.carId}}</td>
+        <td>{{carImage.date}}</td>
+        <td>
+            <img
+            [src]="getImagePath(carImage.imagePath)"
+            class="img-fluid"
+            [alt]="getImagePath(carImage.imagePath)"
+            width="400" height="400"
+            />
+        </td>
+    </tr>
+</table>
