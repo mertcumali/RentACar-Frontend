@@ -23,10 +23,10 @@ export class CarImageComponent implements OnInit {
       this.carImages=response.data;
     })
   }
-
   getImagePath(image:string)
   {
     let newPath = this.path + image;
+    console.log(newPath)
     return newPath; 
   }
 }

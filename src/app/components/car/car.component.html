@@ -1,7 +1,15 @@
 <div *ngIf="dataLoaded==false" class="spinner-border text-danger" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
-
+<div class="">
+  <label for="filterText" class="form-label"></label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" 
+  placeholder="Search on Cars..">
+</div>
+<div *ngIf="filterText.length>2" class="alert alert-warning">
+    {{filterText}} searched.
+</div>
+<!--
 <table *ngIf="dataLoaded==true" class="table">
     <thead>
        <tr>
@@ -11,15 +19,40 @@
         <th>Model Year</th>
         <th>Daily Price</th>
         <th>Description</th>
+        <th></th>
        </tr>
     </thead>
-    
-    <tr *ngFor="let car of cars">
+    <tr *ngFor="let car of cars |filterCar:filterText">
         <td>{{car.carId}}</td>
         <td>{{car.brandName}}</td>
         <td>{{car.colorName}}</td>
         <td>{{car.modelYear}}</td>
         <td>{{car.dailyPrice}}</td>
         <td>{{car.description}}</td>
+        <td> <button (click)="addToGarage(car)" type="button" class="btn btn-warning">Add to Garage
+
+        </button></td>
     </tr>
-</table>
+</table>-->
+<div class="row">
+    <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
+      <img src="{{imageUrl}}{{car.imagePath}}"  class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{car.description}}</h5>
+      </div>
+     <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Brand: {{car.brandName}} </li>
+          <li class="list-group-item"> Model: {{car.modelYear}}</li>
+          <li class="list-group-item"> Daily Price: {{car.dailyPrice}}</li>
+          <li class="list-group-item"> Color: {{car.colorName}}</li>
+     </ul>
+      <div class="card-body">
+        <section style="float:left">
+          <button type="button" class="btn btn-secondary">Details</button>
+        </section>
+        <section style="float:right">
+          <button  type="button" class="btn btn-success">Rent</button>
+        </section>
+      </div>
+    </div>
+  </div>

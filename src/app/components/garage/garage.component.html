@@ -1,0 +1,14 @@
+<li *ngIf="garageItems.length>0" class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Garage
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li *ngFor="let garageItem of garageItems"><a 
+        class="dropdown-item">
+        <span class="badge bg-info">{{garageItem.quantity}}</span>
+        {{garageItem.car.description}}
+        <span (click)="removeFromGarage(garageItem.car)" class="badge bg-danger">Del</span></a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item">Go to Garage</a></li>
+    </ul>
+  </li>
