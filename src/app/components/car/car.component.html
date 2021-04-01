@@ -36,7 +36,7 @@
 </table>-->
 <div class="row">
     <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
-      <img src="{{imageUrl}}{{car.imagePath}}"  class="card-img-top">
+      <img src="{{imageUrl}}{{car.imagePath}}" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{car.description}}</h5>
       </div>
