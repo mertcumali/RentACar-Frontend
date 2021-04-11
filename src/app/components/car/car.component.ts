@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Brand } from 'src/app/models/brand';
 import { Car } from 'src/app/models/car';
 import { CarImage } from 'src/app/models/car-image';
+import { Color } from 'src/app/models/color';
+import { BrandService } from 'src/app/services/brand.service';
 import { CarImageService } from 'src/app/services/car-image.service';
 import { CarService } from 'src/app/services/car.service';
+import { ColorService } from 'src/app/services/color.service';
 import { GarageService } from 'src/app/services/garage.service';
 
 @Component({
@@ -24,15 +28,26 @@ export class CarComponent implements OnInit {
     private activatedRoute:ActivatedRoute,
     private toastrService:ToastrService,
     private garageService:GarageService,
-    private imageService:CarImageService) { }
+    private imageService:CarImageService,
+    private brandService:BrandService,
+    private colorService:ColorService,) { }
+
+  
+    currentBrand:number
+    currentColor:number
+
+    brands: Brand[] = [];
+    colors: Color[] = [];
+  
 
   ngOnInit(): void {
+    this.getColors()
+    this.getBrands()
     this.activatedRoute.params.subscribe(params=>{
-      if(params["brandId"] && params["colorId"]){
-        this.getCarsByFilter(params["brandId"],params["colorId"])
-        console.log("if")
+      if(params["selectedBrandId"] && params["selectedColorId"]){
+        this.getCarsByFilter(params["selectedBrandId"],params["selectedColorId"])
       }
-      if(params["brandId"]){
+      else if(params["brandId"]){
         this.getCarByBrand(params["brandId"])
       }
       else if(params["colorId"]){
@@ -80,4 +95,54 @@ export class CarComponent implements OnInit {
       }
     })
   }
+  getBrands() {
+    this.brandService.getBrands().subscribe((response) => {
+      this.brands = response.data;
+    });
+  }
+
+  getColors() {
+    this.colorService.getColors().subscribe((response) => {
+      this.colors = response.data;
+    });
+  }
+
+  getCurrentColor(colorId: number) {
+    if(colorId==this.currentColor)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+  getCurrentBrand(brandId: number) {
+    if(brandId == this.currentBrand)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  IsCurrentBrandNull(){
+    if(this.currentBrand){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  IsCurrentColorNull(){
+    if(this.currentColor){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+
 }

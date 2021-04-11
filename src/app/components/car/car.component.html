@@ -9,31 +9,40 @@
 <div *ngIf="filterText.length>2" class="alert alert-warning">
     {{filterText}} searched.
 </div>
-<!--
-<table *ngIf="dataLoaded==true" class="table">
-    <thead>
-       <tr>
-        <th>Car Id</th>
-        <th>Brand Name</th>
-        <th>Color Name</th>
-        <th>Model Year</th>
-        <th>Daily Price</th>
-        <th>Description</th>
-        <th></th>
-       </tr>
-    </thead>
-    <tr *ngFor="let car of cars |filterCar:filterText">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.modelYear}}</td>
-        <td>{{car.dailyPrice}}</td>
-        <td>{{car.description}}</td>
-        <td> <button (click)="addToGarage(car)" type="button" class="btn btn-warning">Add to Garage
 
-        </button></td>
-    </tr>
-</table>-->
+<div class="row">
+  <div class="col-md-3">
+    <select [(ngModel)]="currentBrand" class="form-select" aria-label="Default select example">
+        <!--<option [selected]="IsCurrentBrandNull()"  [value]="undefined">Bir marka seçiniz</option>-->
+        <option *ngFor="let brand of brands" [value]="brand.brandId" [selected]="getCurrentBrand(brand.brandId)">
+          {{brand.brandName}}</option>
+    </select>
+</div>
+<div class="col-md-3">
+  <select [(ngModel)]="currentColor" class="form-select" aria-label="Default select example">
+      <!--<option [selected]="IsCurrentColorNull()"  [value]="undefined">Bir renk seçiniz</option>-->
+      <option *ngFor="let color of colors" [value]="color.colorId" [selected]="getCurrentColor(color.colorId)">
+        {{color.colorName}}</option>
+  </select>
+</div>
+<div class="col-md-2">
+  <button routerLink="/cars/filter/brand/{{currentBrand}}/color/{{currentColor}}" type="button" class="btn btn-success btn-lg">
+      Filter
+  </button>
+</div> 
+  <div class="col-md-2" >
+    <button
+      class="btn btn-danger btn-lg"
+      routerLink="/cars"
+    >
+      Clear
+    </button>
+  </div>
+
+</div>
+
+
+
 <div class="row">
     <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
       <img src="{{imageUrl}}{{car.imagePath}}" class="card-img-top">
@@ -45,13 +54,14 @@
           <li class="list-group-item"> Model: {{car.modelYear}}</li>
           <li class="list-group-item"> Daily Price: {{car.dailyPrice}}</li>
           <li class="list-group-item"> Color: {{car.colorName}}</li>
+          <li class="list-group-item"> Findex Point: {{car.findexPoint}}</li>
      </ul>
       <div class="card-body">
         <section style="float:left">
-          <button type="button" class="btn btn-secondary">Details</button>
+          <button type="button" class="btn btn-secondary"routerLink="/cars/cardetail/{{car?.carId}}">Details</button>
         </section>
         <section style="float:right">
-          <button  type="button" class="btn btn-success">Rent</button>
+          <button routerLink="/cars/rental/{{car.carId}}" type="button" class="btn btn-success">Rent</button>
         </section>
       </div>
     </div>

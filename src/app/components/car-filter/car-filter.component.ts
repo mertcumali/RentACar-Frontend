@@ -52,29 +52,6 @@ export class CarFilterComponent implements OnInit {
     });
   }
 
-
-  getCarByBrand(brandId:number){
-    this.carService.getCarsByBrand(brandId).subscribe(response=>{
-      this.cars=response.data;
-      this.dataLoaded=true;
-    })
-  }
-  getCarByColor(colorId:number){
-    this.carService.getCarsByColor(colorId).subscribe(response=>{
-      this.cars=response.data;
-      this.dataLoaded=true;
-    })
-  }
-  getCarByBrandColor(brandId:number,colorId:number){
-    this.carService.getCarsByBrandColor(brandId,colorId).subscribe(response=>{
-      this.cars=response.data;
-      if(this.cars.length==0)
-      {
-        this.toastrService.error("No cars matching your search were found.");
-      }
-    })
-  }
-
   getCurrentColor(color: Color) {
     if(color.colorId==this.currentColor)
     {
@@ -97,31 +74,4 @@ export class CarFilterComponent implements OnInit {
     }
   }
 
-  getRouterLink(){
-    if(this.currentBrand && this.currentColor){
-      return "/cars/filter/brand/"+this.currentBrand+"/color/"+this.currentColor;
-    }else if(this.currentBrand){
-      return "/cars/filter/brand/"+this.currentBrand;
-    }else if(this.currentColor){
-      return "/cars/filter/color/"+this.currentColor;
-    }else{
-      return "/cars";
-    }
-  }
-
-  IsCurrentBrandNull(){
-    if(this.currentBrand){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  IsCurrentColorNull(){
-    if(this.currentColor){
-      return true;
-    }else{
-      return false;
-    }
-  }
 }
