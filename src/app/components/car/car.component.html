@@ -39,10 +39,8 @@
 
 </div>
 
-
-
 <div class="row">
-    <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 18rem;">
+    <div *ngFor="let car of cars |filterCar:filterText " class="card" style="width: 20rem;">
       <img src="{{imageUrl}}{{car.imagePath}}" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{car.description}}</h5>
@@ -59,7 +57,7 @@
           <button type="button" class="btn btn-secondary"routerLink="/cars/cardetail/{{car?.carId}}">Details</button>
         </section>
         <section style="float:right">
-          <button routerLink="/cars/rental/{{car.carId}}" type="button" class="btn btn-success">Rent</button>
+          <button routerLink="/cars/rental/{{car.carId}}" type="button" class="btn btn-warning">Rent</button>
         </section>
       </div>
     </div>

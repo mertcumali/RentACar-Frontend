@@ -107,6 +107,7 @@ export class RentalComponent implements OnInit {
       dailyPrice: this.car.dailyPrice,
       rentDate: this.rentDate,
       returnDate: this.returnDate,
+      modelYear:this.car.modelYear,
       customerId: 1006
     };
     if(createdRental.customerId == undefined || createdRental.rentDate == undefined){

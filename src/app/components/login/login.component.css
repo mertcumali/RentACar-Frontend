@@ -8,7 +8,7 @@ body {
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #4cd
+  background-color:#FFFACD
 }
 
 .form-signin {
@@ -16,6 +16,9 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: auto;
+  border:1px solid rgb(184, 84, 84);
+  padding:30px 40px;
+
 }
 
 .form-signin .checkbox {
@@ -50,3 +53,5 @@ body {
       font-size: 3.5rem;
     }
   }
+
+.bg{background: url("https://localhost:44357/Images/login.jpg") no-repeat; width:100%; height:100vh ;}

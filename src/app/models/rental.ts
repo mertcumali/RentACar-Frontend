@@ -9,6 +9,7 @@ export interface Rental{
     companyName?:string;
     carName:string;
     dailyPrice:number;
+    modelYear:string;
     rentDate:Date;
     returnDate:Date;
 }

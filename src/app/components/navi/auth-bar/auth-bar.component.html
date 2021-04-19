@@ -1,16 +1,16 @@
 <div *ngIf="!isAuthenticated()">
-    <button class="btn btn-outline-success rounded-pill px-4" routerLink="/register">
+    <button class="btn btn-outline-light rounded-pill px-4" routerLink="/register">
        <i class="bi-person-fill me-1"></i> Register
     </button>
  
-    <button class="btn btn-success rounded-pill px-4 ms-lg-2" routerLink="/login">
+    <button class="btn btn-light rounded-pill px-4 ms-lg-2" routerLink="/login">
        <i class="bi-box-arrow-in-right me-1"></i> Login
     </button>
  </div>
  
   <div *ngIf="isAuthenticated() && getCurrentCustomer()">
     <div class="btn-group d-grid">
-       <button class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown">
+       <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">
           <i class="bi-person-circle me-1"></i>
           {{ getCurrentCustomer().firstName }} {{ getCurrentCustomer().lastName }}
        </button>

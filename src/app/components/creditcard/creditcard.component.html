@@ -21,6 +21,7 @@
                     <td>{{rental.returnDate}}</td>
                     <td>{{rental.brandName}}</td>
                     <td>{{rental.colorName}}</td>
+                    <td>{{rental.modelYear }}</td>
                     <td>{{rental.dailyPrice }}</td>
                     <td><strong>
                         {{paymentAmount }}
@@ -74,8 +75,8 @@
     <div class="card-footer">
         <div class="row">
             <button (click)="rentACar()" class="btn btn-success">
-                <strong>{{paymentAmount}}</strong> 
-                Make Payment
+                Make Payment 
+                <strong>${{paymentAmount}}</strong> 
             </button>
         </div>
     </div>
