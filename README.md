@@ -4,7 +4,7 @@
 ## Car Detail
 ![1](https://user-images.githubusercontent.com/45246123/115303233-078aaa00-a16c-11eb-99ae-d7c49a93580d.JPG)
 ## Filter
-![6](https://user-images.githubusercontent.com/45246123/115294807-bbd30300-a161-11eb-98d4-0a6d31e5dbee.JPG)
+![6](https://user-images.githubusercontent.com/45246123/115303825-c8a92400-a16c-11eb-8bca-6f8acc0e976a.JPG)
 ## Login & Register
 ![3](https://user-images.githubusercontent.com/45246123/115294884-d5744a80-a161-11eb-8e72-4aab3b55bbf0.JPG)
 ![4](https://user-images.githubusercontent.com/45246123/115294903-d9a06800-a161-11eb-9dc5-50bf32615b93.JPG)
@@ -14,7 +14,7 @@
 ![7](https://user-images.githubusercontent.com/45246123/115294957-e755ed80-a161-11eb-8c82-1231944da595.JPG)
 ![8](https://user-images.githubusercontent.com/45246123/115294964-e91fb100-a161-11eb-855b-f26c45a23842.JPG)
 ## Rent & Payment
-![10](https://user-images.githubusercontent.com/45246123/115295383-5e8b8180-a162-11eb-9919-b248f3110ba8.JPG)
+![10](https://user-images.githubusercontent.com/45246123/115303842-cfd03200-a16c-11eb-865f-9063bc9e0ef9.JPG)
 ![11](https://user-images.githubusercontent.com/45246123/115295389-60554500-a162-11eb-897b-6a9d8c5e2c9b.JPG)
 ## Built With
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
