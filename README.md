@@ -17,10 +17,11 @@
 ![10](https://user-images.githubusercontent.com/45246123/115295383-5e8b8180-a162-11eb-9919-b248f3110ba8.JPG)
 ![11](https://user-images.githubusercontent.com/45246123/115295389-60554500-a162-11eb-897b-6a9d8c5e2c9b.JPG)
 ## Built With
-<img src="https://img.shields.io/badge/-TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
-<img src="https://img.shields.io/badge/HTML-F9A03C?style=for-the-badge&logo=html5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS-FB542B?style=for-the-badge&logo=css3&logoColor=white"/>
-<img src="https://img.shields.io/badge/-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![HTML](img src="https://img.shields.io/badge/HTML-F9A03C?style=for-the-badge&logo=html5&logoColor=white")](w3schools.com/html/)
+[![CSS](img src="https://img.shields.io/badge/CSS-FB542B?style=for-the-badge&logo=css3&logoColor=white")](https://www.w3schools.com/css/)
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 
 # Rentacar
 
